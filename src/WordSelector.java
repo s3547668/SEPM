@@ -4,10 +4,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class wordSelector {
+public class WordSelector {
 
     List<String> dictionary = new ArrayList<String>();
     List<String> usedWords = new ArrayList<String>();
+
+    public WordSelector(){
+    }
 
     public void createDictionary() throws IOException {
         // load data from file
@@ -36,9 +39,9 @@ public class wordSelector {
     }
 
     public static void main(String[] args) throws IOException {
-        wordSelector ws = new wordSelector();
+        WordSelector ws = new WordSelector();
         ws.createDictionary();
-        // Call below at the start of each day:
+        // Call below at the start of each day in driver class:
         System.out.println(ws.selectRandomWord(ws.dictionary));
     }
 }
